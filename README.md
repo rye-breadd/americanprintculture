@@ -1,7 +1,5 @@
-# Ignore specific files inside playwright_ws
-playwright_ws/__tests__/
-playwright_ws/node_modules/
-playwright_ws/test-results/
-playwright_ws/package-lock.json
-playwright_ws/package.json
-server/__pychache__
+To run the webscraper, first look at the bottom of webs_scraper.js, change auto search to whatever you want and then in your terminal, run node web_scraper.js within the
+playwright_ws folder.
+
+Will update soon and make this more inutitive soon.
+
