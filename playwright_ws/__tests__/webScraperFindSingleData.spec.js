@@ -13,5 +13,4 @@ test('Finds the data in a single link', async({ browser }) => {
     expect(result[0].link).toBe('https://hojishinbun.hoover.org/?a=d&d=csn18820405-01.1.5&srpos=1&e=-------en-10--1-byDA-img-%e4%ba%8c%e4%b8%96------')
     expect(result[0].numWords).toBe(1)
     expect(result[0].paragraphs.length).toBe(4)
-    expect(result[0].pdfName).toContain(".pdf")
 });

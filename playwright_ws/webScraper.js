@@ -119,27 +119,12 @@ async function findSingleData (page, link, storage = []) {
             numWords += matches.length
         });
 
-        // Collect PDF File Link
-        console.log('Collecting PDF link...')
-        const pdfLink = await newPage.locator('#oseadpagelevellinkscontainer a').getAttribute('href')
-        const fullPdfLink = `https://hojishinbun.hoover.org${pdfLink}`
-
-        // Download the PDF File
-        console.log('Downloading PDF file...')
-        const downloadPromise = newPage.waitForEvent('download');
-        await newPage.evaluate((fullPdfLink) => {
-            window.location.href = fullPdfLink;
-          }, fullPdfLink);
-        const download = await downloadPromise;
-        await download.saveAs('pdf_files/' + download.suggestedFilename());
-        
-
+ 
         // Add necessary data into json file
         const storageLinks = {
             'link' : link,
             'numWords' : numWords,
             'paragraphs' : paragraphs,
-            'pdfName' : download.suggestedFilename()
         };
         storage.push(storageLinks)
         
@@ -258,7 +243,7 @@ function convertToCSV(array, delimiter = '|') {
 
     var data = []
     const browser = await chromium.launch({ headless: true }); // Set to false if you want to see the browser
-    const l = await autoSearch(browser, 'https://hojishinbun.hoover.org/?a=q&qp=0&r=1&results=1&tyq=PAGE&e=-------en-10--31--img-%e4%ba%8c%e4%b8%96------', 500)
+    const l = await autoSearch(browser, 'https://hojishinbun.hoover.org/?a=q&hs=1&r=1&results=1&txq=Negro&dafdq=&dafmq=&dafyq=&datdq=&datmq=&datyq=&puq=&ssnip=img&qp=1&e=-------en-10--1-byDA-img-negro-PAGE-----', 500)
     data = await findData(browser, l, data)
 
     const jsonData = JSON.stringify(data, null, 2); // Pretty-print JSON
