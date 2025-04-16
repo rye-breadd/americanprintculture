@@ -68,7 +68,7 @@ Enter URL to start scraping from: https://hojishinbun.hoover.org/?a=q&qp=0&r=1&r
 Enter the number of pages to search: 5
 ```
 
-This will search through 5 pages starting from the provided URL, look for occurrences of the word "example", and save the results in `output-articleData.json`.
+This will search through 5 pages starting from the provided URL, look for occurrences of the word "二世", and save the results in `output-nisei.json`.
 
 ## Troubleshooting
 
