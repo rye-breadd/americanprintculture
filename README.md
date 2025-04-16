@@ -1,4 +1,4 @@
-# Web Scraper using Playwright
+# Hoji Shinbun Digital Collection Webscraper
 
 This script utilizes Playwright and Node.js to scrape data from a specific website. It automatically navigates through search results, extracts relevant article content, and counts the occurrences of a specific word in the text. The collected data is saved into a JSON file.
 
